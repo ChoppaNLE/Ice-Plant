@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levers.unity
     guid: 58df60370edc9724f928ea4f75b2bf9e
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 7ab95aeea92e9f8468f68dde59e5aa4c
   m_configObjects: {}
