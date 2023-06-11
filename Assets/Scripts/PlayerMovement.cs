@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {   
-    [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float fallMultiplier = 2.5f;
-    [SerializeField] private float lowJumpMultiplier = 2f;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundRadius = 0.2f;
+    [SerializeField] private float jumpForce ;
+    [SerializeField] private float moveSpeed ;
+    [SerializeField] private float fallMultiplier ;
+    [SerializeField] private float lowJumpMultiplier ;
     [SerializeField] private LayerMask whatIsGround;
 
     private Rigidbody2D rb;
@@ -39,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         
         float horizontal =0f;
         
-        if (gameObject.tag == "Player1")
+        if (gameObject.CompareTag("Player1"))
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
@@ -57,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpsLeft--;
             }
         }
-        else if (gameObject.tag == "Player2")
+        else if (gameObject.CompareTag("Player2"))
         {
             
             if (Input.GetKey(KeyCode.A))
@@ -77,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (rb.velocity.y < 0) // Cae más rápido que cuando salta
+        if (rb.velocity.y < 0) // Cae mï¿½s rï¿½pido que cuando salta
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
@@ -91,7 +89,11 @@ public class PlayerMovement : MonoBehaviour
        
         Vector2 movement = new Vector2(horizontal, 0f);
         knight.GetComponent<Animator>().SetBool("walk", movement.x != 0f);
-        rb.velocity = new Vector2(movement.normalized.x * moveSpeed, rb.velocity.y);
+        if (isGrounded)
+        {
+            rb.velocity = new Vector2(movement.normalized.x * moveSpeed, rb.velocity.y);
+        }
+        
         if (movement.x > 0)
         {
             transform.localRotation = Quaternion.Euler(0f, -180f, 0f);
@@ -102,5 +104,30 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlatformI") && gameObject.CompareTag("Player1"))
+        {
+            jumpForce *= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
+        }
+        
+        else if (collision.CompareTag("PlatformP") && gameObject.CompareTag("Player2"))
+        {
+            jumpForce *= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlatformI") && gameObject.CompareTag("Player1"))
+        {
+            jumpForce /= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
+        }
+        
+        else if (collision.CompareTag("PlatformP") && gameObject.CompareTag("Player2"))
+        {
+            jumpForce /= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
+        }
     }
 }

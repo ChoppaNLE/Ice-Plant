@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2459513887506126741}
   - component: {fileID: 2459513887506126740}
-  - component: {fileID: 5238851618589801501}
   m_Layer: 6
   m_Name: Forest_terrain_dirt_grass(fall)_128px_2
   m_TagString: Untagged
@@ -85,32 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5238851618589801501
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459513887506126826}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &2459513888141279646
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2459513888141279641}
+  - component: {fileID: 3154130710079847489}
   m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
@@ -145,6 +119,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3154130710079847489
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2459513888141279646}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0039486885, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.9663591, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2459513888827798294
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2459513888827798289}
   - component: {fileID: 2459513888827798288}
-  - component: {fileID: 6870220863842780318}
-  - component: {fileID: 5589760327839772348}
+  - component: {fileID: 2517237857899854437}
   m_Layer: 6
   m_Name: Forest_terrain_dirt_grass(fall)_128px_2 (2)
   m_TagString: Untagged
@@ -220,7 +219,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db0899aac45d8d2409fd564aff578724, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 1b63bdb5079a21140a015e2f681f08bc, type: 3}
   m_Color: {r: 0.35343537, g: 0.6886792, b: 0.3668335, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -231,54 +230,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6870220863842780318
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459513888827798294}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!68 &5589760327839772348
-EdgeCollider2D:
+--- !u!114 &2517237857899854437
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459513888827798294}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.48420572, y: -0.44223356}
-  - {x: 0.5157943, y: 0.48961544}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22320934b069e964ba04d2935ba984a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpHighMultiplier: 2
 --- !u!1 &2459513889240945955
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +253,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2459513889240945954}
   - component: {fileID: 2459513889240945965}
-  - component: {fileID: 7732880337611589764}
-  - component: {fileID: 380058063635637532}
   m_Layer: 6
   m_Name: Forest_terrain_dirt_grass(fall)_128px_2 (1)
   m_TagString: Untagged
@@ -354,7 +316,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: db0899aac45d8d2409fd564aff578724, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 1b63bdb5079a21140a015e2f681f08bc, type: 3}
   m_Color: {r: 0.33641866, g: 0.7075472, b: 0.37939095, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -365,51 +327,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7732880337611589764
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459513889240945955}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.01184535, y: -0.023716092}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0236907, y: 0.95266795}
-  m_EdgeRadius: 0
---- !u!68 &380058063635637532
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459513889240945955}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0.47382116}
-  - {x: 0.49210262, y: -0.41064548}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
