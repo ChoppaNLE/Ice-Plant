@@ -15,15 +15,15 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - OutsideGround
+  - DangerousGroundPlant
+  - DangensGroundIce
+  - Button
+  - Box
+  - Teleport
+  - Door
+  - Player1
+  - Player2
   - 
   - 
   - 

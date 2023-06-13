@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BotonBarrera : MonoBehaviour
+public class BotonPuertaBaja : MonoBehaviour
 {
     [SerializeField]
-    private GameObject barreraAsociada;
+    private PuertaBaja puertaAsociada;
      
     // Start is called before the first frame update
     void Start()
     {
-          barreraAsociada.SetActive(true);
+          //puertaAsociada.SetActive(true);
     }
 
     // Update is called once per frame
@@ -21,11 +21,11 @@ public class BotonBarrera : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-          barreraAsociada.SetActive(false);
+          puertaAsociada.towardsDown = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-         barreraAsociada.SetActive(true);
+         puertaAsociada.towardsDown = false;
     }
 }

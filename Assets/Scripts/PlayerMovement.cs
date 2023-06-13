@@ -32,13 +32,14 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            jumpsLeft = 0;
+            jumpsLeft = 1;
         }
         
         float horizontal =0f;
         
         if (gameObject.CompareTag("Player1"))
         {
+            
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 horizontal = -1f;
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpsLeft--;
             }
         }
+
         else if (gameObject.CompareTag("Player2"))
         {
             
@@ -74,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
+        
         if (rb.velocity.y < 0) // Cae m�s r�pido que cuando salta
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -83,13 +85,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-
-
         
-       
+
         Vector2 movement = new Vector2(horizontal, 0f);
         knight.GetComponent<Animator>().SetBool("walk", movement.x != 0f);
-        if (isGrounded)
+        //if (isGrounded)
+        if (true)
         {
             rb.velocity = new Vector2(movement.normalized.x * moveSpeed, rb.velocity.y);
         }

@@ -11,8 +11,8 @@ public class BotonTeletransporte : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          teleportesAsociados[0].gameObject.transform.GetChild(3).gameObject.SetActive(false);  
-          teleportesAsociados[1].gameObject.transform.GetChild(3).gameObject.SetActive(false);    
+          teleportesAsociados[0].gameObject.transform.GetChild(6).gameObject.SetActive(false);  
+          teleportesAsociados[1].gameObject.transform.GetChild(6).gameObject.SetActive(false);    
     }
 
     // Update is called once per frame
@@ -23,15 +23,15 @@ public class BotonTeletransporte : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-         if (teleportesAsociados[0].gameObject.transform.GetChild(3).gameObject.activeSelf == false){
-              teleportesAsociados[0].gameObject.transform.GetChild(3).gameObject.SetActive(true); 
-              teleportesAsociados[1].gameObject.transform.GetChild(3).gameObject.SetActive(true);  
+         if (teleportesAsociados[0].gameObject.transform.GetChild(6).gameObject.activeSelf == false){
+              teleportesAsociados[0].gameObject.transform.GetChild(6).gameObject.SetActive(true); 
+              teleportesAsociados[1].gameObject.transform.GetChild(6).gameObject.SetActive(true);  
          }   
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-         teleportesAsociados[0].gameObject.transform.GetChild(3).gameObject.SetActive(false);  
-         teleportesAsociados[1].gameObject.transform.GetChild(3).gameObject.SetActive(false); 
+         teleportesAsociados[0].gameObject.transform.GetChild(6).gameObject.SetActive(false);  
+         teleportesAsociados[1].gameObject.transform.GetChild(6).gameObject.SetActive(false); 
     }
 }

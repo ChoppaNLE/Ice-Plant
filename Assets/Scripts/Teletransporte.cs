@@ -22,7 +22,7 @@ public class Teletransporte : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-         if (this.gameObject.transform.GetChild(3).gameObject.activeSelf){
+         if (this.gameObject.transform.GetChild(6).gameObject.activeSelf){
               if (llegada == false){
                     col.transform.position = teleporteAsociado.transform.position;
                     teleporteAsociado.llegada = true;
