@@ -1,4 +1,3 @@
-
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -7,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField] private Canvas levelCanvas;
     [SerializeField] private TextMeshProUGUI youLosetext;
     [SerializeField] private TextMeshProUGUI youWintext;
@@ -98,19 +98,18 @@ public void AddPointsToPlayer(int playerNumber, int points)
         Invoke("LoadStartScene", 1f);
 
     }
+
     private void LoadStartScene()
     {
-        
-        youLosetext.enabled = false;
-        youWintext.enabled = false;
-        SceneManager.LoadScene("Start");
+        //youLosetext.enabled = false;
+        //youWintext.enabled = false;
+        SceneManager.LoadScene("Level2");
     }
     
     
     public void IncrementPlayersAtGoal(string player)
     {
-
-        
+ 
         if (player == "one")
         {
             playerone++;
@@ -129,7 +128,7 @@ public void AddPointsToPlayer(int playerNumber, int points)
     public void GameWin()
     {
 
-        youWintext.enabled = true;
+        //youWintext.enabled = true;
         Invoke("LoadStartScene", 1f);
     }   
     

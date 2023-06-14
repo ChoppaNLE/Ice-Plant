@@ -17,15 +17,15 @@ TagManager:
   - UI
   - OutsideGround
   - DangerousGroundPlant
-  - DangensGroundIce
+  - DangerousGroundIce
   - Button
   - Box
   - Teleport
   - Door
   - Player1
   - Player2
-  - 
-  - 
+  - Ball
+  - Exit
   - 
   - 
   - 
