@@ -7,9 +7,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallMultiplier ;
     [SerializeField] private float lowJumpMultiplier ;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private LayerMask whatIsDoor;
+    [SerializeField] private LayerMask whatIsBox;
 
     private Rigidbody2D rb;
     private bool isGrounded;
+    private bool isDoor;
+    private bool isBox;
+    private bool canJump ;
     private int jumpsLeft = 0;
     private bool hasJumpedInAir;
 
@@ -24,16 +29,23 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        isGrounded = Physics2D.OverlapBox(new Vector2(transform.position.x, transform.position.y - 0.5f), new Vector2(0.9f, 0.1f), 0f, whatIsGround);
+        isGrounded =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsGround);
 
-        if (isGrounded)
+        
+        isDoor =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsDoor);
+
+        isBox =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsBox);
+
+
+        if (isGrounded || isBox || isDoor)
         {
-            jumpsLeft = 1;
+            canJump = true;
         }
         else
         {
-            jumpsLeft = 1;
+            canJump = false;
         }
+        jumpsLeft = canJump ? 1 : 0;
         
         float horizontal =0f;
         
@@ -53,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpsLeft > 0 && Input.GetKeyDown(KeyCode.UpArrow))
             {
                 rb.velocity = Vector2.up * jumpForce;
-                jumpsLeft--;
+                jumpsLeft=0;
             }
         }
 
@@ -72,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumpsLeft > 0 && Input.GetKeyDown(KeyCode.W))
             {
                 rb.velocity = Vector2.up * jumpForce;
-                jumpsLeft--;
+                jumpsLeft=0;
             }
         }
 
@@ -106,29 +118,5 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PlatformI") && gameObject.CompareTag("Player1"))
-        {
-            jumpForce *= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
-        }
-        
-        else if (collision.CompareTag("PlatformP") && gameObject.CompareTag("Player2"))
-        {
-            jumpForce *= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("PlatformI") && gameObject.CompareTag("Player1"))
-        {
-            jumpForce /= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
-        }
-        
-        else if (collision.CompareTag("PlatformP") && gameObject.CompareTag("Player2"))
-        {
-            jumpForce /= 2f; // Aumenta la fuerza de salto cuando toca la plataforma de salto alto
-        }
-    }
+    
 }

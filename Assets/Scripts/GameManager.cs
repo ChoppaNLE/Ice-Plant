@@ -15,9 +15,7 @@ public class GameManager : MonoBehaviour
     private int scorePlayer1 = 0;
     private int scorePlayer2 = 0;
     private bool isPaused = false;
-    private int playerone = 0;
-    private int playertwo= 0;
-    private int playersAtGoal = 0;
+    private int currentLevel = 1;
     private void Awake()
     {
         // Verificar si ya existe una instancia del GameManager y destruir esta si es el caso
@@ -30,30 +28,28 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        // Recuperar el valor de currentLevel desde PlayerPrefs
+        currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
+        
         levelCanvas.enabled = false;
         youLosetext.enabled = false;
         youWintext.enabled = false;
     }
-
+    private void OnDestroy()
+    {
+        // Guardar el valor de currentLevel en PlayerPrefs antes de cambiar de escena
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+    }
     public void LoadFirstLevel()
     {
-        SceneManager.LoadScene("Levers");
+        currentLevel = 1;
+        SceneManager.LoadScene("Level1");
         Time.timeScale = 1f; // Reanudar el juego
-        StartCoroutine(ShowLevelMessage());
-
-
     }
 
-    private IEnumerator ShowLevelMessage()
+    private void ShowLevelMessage()
     {
-        levelMessage.text = "If you fall to hell , you lose";
-        levelMessage.enabled = true; // Asegurarse de que el texto esté habilitado
-
-        yield return new WaitForSeconds(1f); 
-
-        levelMessage.text = "¡Platforms green and white are levers ";
-        yield return new WaitForSeconds(1f); 
-        levelMessage.enabled = false; // Deshabilitar el texto después de mostrar los mensajes
+        levelMessage.enabled = false;
     }
 
 
@@ -101,36 +97,30 @@ public void AddPointsToPlayer(int playerNumber, int points)
 
     private void LoadStartScene()
     {
-        //youLosetext.enabled = false;
-        //youWintext.enabled = false;
-        SceneManager.LoadScene("Level2");
+        currentLevel = 1;
+        Time.timeScale = 1f;
+        youLosetext.enabled = false;
+        youWintext.enabled = false;
+        SceneManager.LoadScene("Start");
     }
     
-    
-    public void IncrementPlayersAtGoal(string player)
+    public void NextLevel()
     {
- 
-        if (player == "one")
+        currentLevel++;
+        Debug.Log(currentLevel);
+        switch (currentLevel)
         {
-            playerone++;
-        }
-        else
-        {
-            playertwo++;
-        }
-        playersAtGoal = playerone + playertwo;
-        if (playersAtGoal >= 2)
-        {
-            // Ambos jugadores han llegado a su meta, el juego se gana aquí
-            GameWin();
+            case 4:
+                youWintext.enabled = true;
+            
+                Invoke("LoadStartScene",1f);
+                break;
+            default:
+                SceneManager.LoadScene("Level" + currentLevel);
+                Invoke("ShowLevelMessage",1f);
+                break;
         }
     }
-    public void GameWin()
-    {
-
-        //youWintext.enabled = true;
-        Invoke("LoadStartScene", 1f);
-    }   
     
     
 }

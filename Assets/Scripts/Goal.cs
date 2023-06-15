@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,21 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+  
+    private int playersInZoneCount = 0;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player1"))
+        if (collision.CompareTag("Player1"))
         {
-            // Incrementar el contador de jugadores en el GameManager
-            GameManager.Instance.IncrementPlayersAtGoal("one");
-
-            // Otros efectos o acciones que desees realizar cuando un jugador llega a su meta
+            playersInZoneCount++;
+            if (playersInZoneCount >= 2)
+            {
+                GameManager.Instance.NextLevel();
+            }
         }
-        else if (other.CompareTag("Player2"))
+        else if (collision.CompareTag("Player2"))
         {
-            // Incrementar el contador de jugadores en el GameManager
-            GameManager.Instance.IncrementPlayersAtGoal("two");
+            playersInZoneCount++;
+            
+            if (playersInZoneCount >= 2)
+            {
+                GameManager.Instance.NextLevel();
+            }
+        }
+        
+    }
 
-            // Otros efectos o acciones que desees realizar cuando un jugador llega a su meta
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
+        {
+            playersInZoneCount--;
         }
     }
 }

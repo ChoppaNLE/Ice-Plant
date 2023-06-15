@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TerrenoPeligrosoPlanta : MonoBehaviour
 {
+    [SerializeField]private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,8 @@ public class TerrenoPeligrosoPlanta : MonoBehaviour
     {
           if (col.gameObject.CompareTag("Player1")){
                col.gameObject.SetActive(false);
+               gameManager.OnExitDead();
           }
+          
     }
 }
