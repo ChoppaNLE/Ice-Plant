@@ -25857,10 +25857,10 @@ MonoBehaviour:
     m_Bits: 64
   whatIsDoor:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   whatIsBox:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!50 &1570105957
 Rigidbody2D:
   serializedVersion: 4
