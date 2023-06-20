@@ -4464,6 +4464,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6efe3d6dfef94cb8a2192507a9d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPointsCanvas: {fileID: 0}
+  player1PointsText: {fileID: 0}
+  player2PointsText: {fileID: 0}
 --- !u!212 &225962163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6865,6 +6868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d6efe3d6dfef94cb8a2192507a9d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPointsCanvas: {fileID: 863299593968762172, guid: 04284135ed094af4ab7c5aad0508037d, type: 3}
+  player1PointsText: {fileID: 1497915908520248209, guid: 3b1f5a62e8c5dee4092db60b06442e1d, type: 3}
+  player2PointsText: {fileID: 3192883139841819671, guid: 908698edc671f634c82f1dc4256b7678, type: 3}
 --- !u!70 &373437706
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -22804,7 +22810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198225603085573130, guid: 8f7f29d9f600c9b4b8441c00c8c9bfe5, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 198225603085573141, guid: 8f7f29d9f600c9b4b8441c00c8c9bfe5, type: 3}
       propertyPath: m_Enabled
@@ -25931,13 +25937,7 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
-  whatIsDoor:
-    serializedVersion: 2
-    m_Bits: 4096
-  whatIsBox:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5184
 --- !u!50 &1564809165
 Rigidbody2D:
   serializedVersion: 4
@@ -25967,7 +25967,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564809163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.98, y: 0.74, z: 0}
+  m_LocalPosition: {x: 15.59, y: -3.44, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26196,13 +26196,7 @@ MonoBehaviour:
   lowJumpMultiplier: 2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
-  whatIsDoor:
-    serializedVersion: 2
-    m_Bits: 4096
-  whatIsBox:
-    serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 5184
 --- !u!50 &1570105957
 Rigidbody2D:
   serializedVersion: 4
@@ -26232,7 +26226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570105955}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 8.81, y: 0.6, z: 0}
+  m_LocalPosition: {x: -8.63, y: -2.75, z: 0}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30245,7 +30239,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 463132480}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -30254,7 +30248,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1845366730
 RectTransform:

@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallMultiplier ;
     [SerializeField] private float lowJumpMultiplier ;
     [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private LayerMask whatIsDoor;
-    [SerializeField] private LayerMask whatIsBox;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -19,9 +17,11 @@ public class PlayerMovement : MonoBehaviour
     private bool hasJumpedInAir;
 
     private Transform knight;
+    private CapsuleCollider2D capsuleCollider2D;
 
     private void Start()
     {
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         knight = transform.Find("Knight");
     }
@@ -29,15 +29,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        isGrounded =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsGround);
-
-        
-        isDoor =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsDoor);
-
-        isBox =  GetComponent<CapsuleCollider2D>().IsTouchingLayers(whatIsBox);
+        isGrounded =  capsuleCollider2D.IsTouchingLayers(whatIsGround);
 
 
-        if (isGrounded || isBox || isDoor)
+        if (isGrounded)
         {
             canJump = true;
         }

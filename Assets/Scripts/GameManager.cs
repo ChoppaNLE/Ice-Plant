@@ -1,8 +1,10 @@
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static System.TimeSpan;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +14,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI youWintext;
     [SerializeField] private TextMeshProUGUI levelMessage;
     public static GameManager Instance { get; private set; }
-    private int scorePlayer1 = 0;
-    private int scorePlayer2 = 0;
     private bool isPaused = false;
     private int currentLevel = 1;
     private void Awake()
@@ -27,13 +27,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         // Recuperar el valor de currentLevel desde PlayerPrefs
         currentLevel = PlayerPrefs.GetInt("CurrentLevel", 1);
-        
+        levelMessage.enabled = true;
+        if (levelCanvas != null)
+        {
+            Invoke("ShowLevelMessage",5f);
+        }
         levelCanvas.enabled = false;
         youLosetext.enabled = false;
         youWintext.enabled = false;
+        
+ 
     }
     private void OnDestroy()
     {
@@ -47,24 +52,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; // Reanudar el juego
     }
 
-    private void ShowLevelMessage()
+    private  void ShowLevelMessage()
     {
         levelMessage.enabled = false;
     }
 
 
-public void AddPointsToPlayer(int playerNumber, int points)
+    public void AddPointsToPlayer(int playerNumber, int points)
     {
         if (playerNumber == 1)
         {
-            scorePlayer1 += points;
-            Debug.Log("Player 1 Score: " + scorePlayer1);
+            PointsData.player1Points += points;
         }
         else if (playerNumber == 2)
         {
-            scorePlayer2 += points;
-            Debug.Log("Player 2 Score: " + scorePlayer2);
+            PointsData.player2Points += points;
         }
+        
     }
 
     public void TogglePause()
@@ -107,7 +111,6 @@ public void AddPointsToPlayer(int playerNumber, int points)
     public void NextLevel()
     {
         currentLevel++;
-        Debug.Log(currentLevel);
         switch (currentLevel)
         {
             case 4:
@@ -117,10 +120,14 @@ public void AddPointsToPlayer(int playerNumber, int points)
                 break;
             default:
                 SceneManager.LoadScene("Level" + currentLevel);
-                Invoke("ShowLevelMessage",1f);
+                
                 break;
         }
     }
     
-    
+    public static class PointsData
+    {
+        public static int player1Points = 0;
+        public static int player2Points = 0;
+    }
 }
