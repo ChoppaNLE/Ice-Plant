@@ -34,8 +34,10 @@ Espacio en disco: 200 MB
 
 Jugador 1 (Ice):
 Teclas de flecha: Movimiento.
+
 Jugador 2 (Plant):
 Teclas "W", "A", "S", "D": Movimiento.
+
 Para informar cualquier problema o sugerencia relacionada con el juego, por favor utiliza la sección de "Issues" en este repositorio.
 
 ¡Diviértete jugando "Ice-Plant" y disfruta de la cooperación entre ambos jugadores para superar todos los desafíos en cada nivel!
