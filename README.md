@@ -19,7 +19,7 @@ Cainos, Yoge y RPG icons: Se utilizaron estos paquetes para agregar elementos ad
 Fantasy Character Free: Los assets de los jugadores, Ice y Plant, fueron obtenidos del paquete "Fantasy Character Free", que incluye modelos de personajes como el caballero utilizado en este juego.
 
 ## Video de gameplay
-Puedes ver un video de gameplay del juego en el siguiente enlace: Video de Gameplay
+Puedes ver un video de gameplay del juego en el siguiente enlace: https://youtu.be/U9t5nJRfjIs
 
 ## Características del juego
 Movimiento y obstáculos: Los jugadores podrán controlar a Ice y Plant utilizando las teclas de flecha y las teclas "W", "A", "S" y "D" para moverse por los niveles llenos de obstáculos y trampas.
