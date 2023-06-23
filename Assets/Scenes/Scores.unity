@@ -1080,10 +1080,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   youLosetext: {fileID: 7511443281495031818, guid: 93c49c0cd597fe343b2a042bbd6415b6, type: 3}
   youWintext: {fileID: 3483787161292334459, guid: 981946462cf557a4d9c41a4d35e0a6f9, type: 3}
-  namePlayer1: {fileID: 0}
-  namePlayer2: {fileID: 0}
-  plantPoints: {fileID: 0}
-  icePoints: {fileID: 0}
+  pauseMenu: {fileID: 198225603085573141, guid: 8f7f29d9f600c9b4b8441c00c8c9bfe5, type: 3}
+  namePlayer1: {fileID: 8098238408429998364, guid: 100ebafacda2d694cb07d7131486e405, type: 3}
+  namePlayer2: {fileID: 4326021007170731928, guid: 9abdced11b015d44c8ca2d3ee7ca2a84, type: 3}
+  plantPoints: {fileID: 799866212861250328, guid: e1edf47f33cc24742a8af8b587701d05, type: 3}
+  icePoints: {fileID: 5564894291124605120, guid: 8793b680600d2df45923e8133f513373, type: 3}
   scoreManager: {fileID: 171691049}
 --- !u!4 &1585268919
 Transform:

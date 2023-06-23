@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI youLosetext;
     [SerializeField] private TextMeshProUGUI youWintext;
+    [SerializeField] private Canvas pauseMenu;
     public static GameManager Instance { get; private set; }
     private bool isPaused = false;
     private int currentLevel = 1;
@@ -43,22 +44,7 @@ public class GameManager : MonoBehaviour
 
         youLosetext.enabled = false;
         youWintext.enabled = false;
-
-        if (scene.name == "Start"){
-            currentLevel = 0;
-        }
-        if (scene.name == "Level1"){
-            currentLevel = 1;
-        }
-        else if (scene.name == "Level2"){
-            currentLevel = 2;
-        }
-        if (scene.name == "Level3"){
-            currentLevel = 3;
-        }     
-        if (scene.name == "Scores"){
-            currentLevel = 4;
-        }  
+        pauseMenu.enabled = false;
         if (currentLevel == 4)
         {
              scoreManager.AddScore(new Score(player1 + "/" + player2, PointsData.player1Points + PointsData.player2Points));   
@@ -124,10 +110,12 @@ public class GameManager : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f; // Pausar el juego
+            pauseMenu.enabled = true;
         }
         else
         {
             Time.timeScale = 1f; // Reanudar el juego
+            pauseMenu.enabled = false;
         }
     }
 
