@@ -46,7 +46,7 @@ Jugador 1 (Ice):
 Teclas de flecha: Movimiento.
 
 Jugador 2 (Plant):
-Teclas "W", "A", "S", "D": Movimiento.
+Teclas "W", "A", "D": Movimiento.
 
 Para informar cualquier problema o sugerencia relacionada con el juego, por favor utiliza la sección de "Issues" en este repositorio.
 
