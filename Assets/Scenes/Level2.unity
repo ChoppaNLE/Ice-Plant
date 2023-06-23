@@ -8731,7 +8731,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.093654
+  orthographic size: 7.9888735
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8755,8 +8755,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463132478}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.34, y: 2.17, z: -10}
-  m_LocalScale: {x: 1.2125, y: 1.453125, z: 1}
+  m_LocalPosition: {x: 3.53, y: 2.49, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14392,14 +14392,6 @@ PrefabInstance:
     - target: {fileID: 2967460938024733826, guid: b0ad66a8ab8fe694fae84cafbf675132, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TogglePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 2967460938024733828, guid: b0ad66a8ab8fe694fae84cafbf675132, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 802
-      objectReference: {fileID: 0}
-    - target: {fileID: 2967460938024733828, guid: b0ad66a8ab8fe694fae84cafbf675132, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0ad66a8ab8fe694fae84cafbf675132, type: 3}
