@@ -3,10 +3,20 @@
 Este proyecto es un juego cooperativo para dos jugadores llamado "Ice-Plant". Los jugadores controlarán a dos personajes, Ice y Plant, y trabajarán juntos para superar diversos niveles llenos de obstáculos y puzzles.
 
 ### Versión de Unity utilizada
-Se utilizó Unity 2021.1.2f1 para el desarrollo de este juego.
+Se utilizó Unity 2021.3.19f1 para el desarrollo de este juego.
 
 ### Paquetes extras utilizados
-No se utilizaron paquetes extras adicionales en este proyecto.
+Se utilizaron los siguientes paquetes extras en este proyecto:
+
+    TooCubeForest: Se utilizó para crear el ambiente del juego, incluyendo los muros, las plataformas y otros elementos del entorno.
+
+    TextMeshPro: Se utilizó para mejorar los textos en el juego, ofreciendo mayor control y calidad en la presentación de los mismos.
+
+    Jungle Music: Se utilizó para agregar música de fondo al juego, creando una ambientación acorde a la temática de la selva.
+
+    Cainos, Yoge y RPG icons: Se utilizaron estos paquetes para agregar elementos adicionales al juego, como puertas droopables y efectos visuales que enriquecen la experiencia de juego.
+
+    Fantasy Character Free: Los assets de los jugadores, Ice y Plant, fueron obtenidos del paquete "Fantasy Character Free", que incluye modelos de personajes como el caballero utilizado en este juego.
 
 ### Video de gameplay
 Puedes ver un video de gameplay del juego en el siguiente enlace: Video de Gameplay
