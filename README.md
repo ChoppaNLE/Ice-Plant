@@ -22,7 +22,7 @@ Fantasy Character Free: Los assets de los jugadores, Ice y Plant, fueron obtenid
 Puedes ver un video de gameplay del juego en el siguiente enlace: https://youtu.be/U9t5nJRfjIs
 
 ## Características del juego
-Movimiento y obstáculos: Los jugadores podrán controlar a Ice y Plant utilizando las teclas de flecha y las teclas "W", "A", "S" y "D" para moverse por los niveles llenos de obstáculos y trampas.
+Movimiento y obstáculos: Los jugadores podrán controlar a Ice y Plant utilizando las teclas de flecha y las teclas "W", "A" y "D" para moverse por los niveles llenos de obstáculos y trampas.
 
 Interacciones y restricciones entre elementos: Ice es vulnerable a las plantas, lo que significa que si entra en contacto con las zonas verdes, morirá. Sin embargo, puede tocar el hielo sin sufrir daño. Por otro lado, Plant es vulnerable al hielo, por lo que debe evitar cualquier contacto con ella, pero puede tocar las plantas sin sufrir daño.
 
