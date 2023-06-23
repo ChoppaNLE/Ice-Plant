@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         isGrounded =  capsuleCollider2D.IsTouchingLayers(whatIsGround);
 
-
         if (isGrounded)
         {
             canJump = true;
@@ -42,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         }
         jumpsLeft = canJump ? 1 : 0;
         
-        float horizontal =0f;
+        float horizontal = 0f;
         
         if (gameObject.CompareTag("Player1"))
         {

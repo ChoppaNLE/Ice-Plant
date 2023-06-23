@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: dc1cc0da6ccfd52498a8d38f71737cc4
+  - enabled: 1
+    path: Assets/Scenes/NameSelecting.unity
+    guid: a374163973202534b99ae842625973b9
+  - enabled: 1
+    path: Assets/Scenes/Scores.unity
+    guid: 61cdeb3dafaa0fb498beec2eb0046f0b
   m_configObjects: {}

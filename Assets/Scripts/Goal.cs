@@ -48,26 +48,8 @@ public class Goal : MonoBehaviour
     
     private void CheckAndActivateNextLevel()
     {
-        if (SceneManager.GetActiveScene().name == "Level3")
-        {
-            
-            UpdatePlayerPointsText();
-        }
-        else
-        {
-            GameManager.Instance.NextLevel();
-        }
-    }
-
-    private async void UpdatePlayerPointsText()
-    {
-        player1PointsText.text = "Points: " + GameManager.PointsData.player1Points.ToString();
-        player2PointsText.text = "Points: " + GameManager.PointsData.player2Points.ToString();
-
-        playerPointsCanvas.enabled = true;
-        await Task.Delay(FromSeconds(value: 2)); // Espera durante 2 segundos
         GameManager.Instance.NextLevel();
-        playerPointsCanvas.enabled = false;
+       
     }
     
     
